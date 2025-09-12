@@ -1,0 +1,40 @@
+.phoneContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: fit-content;
+}
+
+ul{
+    padding:0;
+}
+
+.phoneItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.error{
+    color: red;
+    background: "#dee6e7ff";
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.successfullyOperation{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: fit-content;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}

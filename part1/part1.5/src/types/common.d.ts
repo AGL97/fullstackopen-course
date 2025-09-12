@@ -1,4 +1,4 @@
-type ContentType = {
+type ContentType = {   
     part: string;
     exercises: number;
 }
