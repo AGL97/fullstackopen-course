@@ -3,7 +3,7 @@ import { ApiPhones } from "../api";
 
 const getPhones = async () : Promise<IPhone[]> => {
     try {
-        const {data} = await ApiPhones.get<IPhonesResponse>('/api/persons') 
+        const {data} = await ApiPhones.get<IPhonesResponse>('/persons') 
         if(!data.data){
             return []
         }
@@ -18,7 +18,7 @@ const getPhones = async () : Promise<IPhone[]> => {
 
 const createPhone = async (phone:Omit<IPhone,'id'>) : Promise<IPhone> => {
     try {
-        const {data} = await ApiPhones.post<IPhoneResponse>('/api/persons',{...phone}) 
+        const {data} = await ApiPhones.post<IPhoneResponse>('/persons',{...phone}) 
 
         if(!data.data){
             throw('Something go wrong!');
@@ -34,7 +34,7 @@ const createPhone = async (phone:Omit<IPhone,'id'>) : Promise<IPhone> => {
 
 const updatePhone = async (phone:IPhone) : Promise<IPhone> => {
     try {
-        const {data} = await ApiPhones.put<IPhoneResponse>(`/api/persons/${phone.id}`,
+        const {data} = await ApiPhones.put<IPhoneResponse>(`/persons/${phone.id}`,
         {
             name:phone.name,
             number:phone.number
@@ -53,7 +53,7 @@ const updatePhone = async (phone:IPhone) : Promise<IPhone> => {
 
 const deletePhone = async (id:number) : Promise<IPhone[]> => {
     try {
-        const {data} = await ApiPhones.delete<IPhonesResponse>(`/api/persons/${id}`) 
+        const {data} = await ApiPhones.delete<IPhonesResponse>(`/persons/${id}`) 
         if(!data.data){
             throw new Error('Something go wrong!')
         }
